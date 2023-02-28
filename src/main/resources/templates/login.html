@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
+    <link rel="map" th:href="@{/css/bootstrap.min.css.map}" >
+    <link rel="stylesheet" th:href="@{/font4/css/font-awesome.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}" >
+    <title>Login</title>
+
+</head>
+
+<body style="background-color:#E9ECEF;">
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img th:src="@{/images/white_logo1.png}"  src="./images/white_logo1.png" width="auto" height="60">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li class="hoverable">
+                    <a class="nav-link" th:href="@{/}" href="./home.html">Home</a>
+                </li>
+                <li class="hoverable">
+                    <a class="nav-link" th:href="@{/shop}" href="./shop.html">Shop</a>
+                </li>
+                <li class="hoverable">
+                    <a class="nav-link" th:href="@{/about}" href="./about.html">About</a>
+                </li>
+
+                <li class="hoverable">
+                    <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/register}" href="./register.html">Register</a>
+                </li>
+<!--                <li class="hoverable">-->
+<!--                <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/register}" href="./register.html">Logout</a>-->
+<!--                </li>-->
+
+            </ul>
+        </div>
+        <script src="./javascript/myscripts.js"></script>
+    </nav>
+
+
+    <!-- 
+ <section class="vh-100 gradient-custom"> -->
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+
+                            <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+
+                            <p class="text-white-50 mb-5">Please enter your login details!</p>
+                            <form th:action="@{/login}" th:object="${users}" method="post">
+                                <div class="form-group mt-3">
+
+                                    <input type="text" name="username" id="username" placeholder="Username"
+                                        class="form-control form-control-lg">
+                                </div>
+
+
+                                <div class="form-group mt-3">
+
+                                    <input type="password" class="form-control form-control-lg" placeholder="Password"
+                                        name="user_password" id="user_password">
+                                </div>
+<!--                                <div class="form-group">-->
+
+<!--                                    <input type="text" name="user_type" id="user_type" placeholder="UserType"-->
+<!--                                        class="form-control form-control-lg">-->
+<!--                                </div>-->
+
+<!--                                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a>-->
+<!--                                </p>-->
+
+                                <button class="btn btn-outline-light btn-lg px-15 mt-3" type="submit">Login</button>
+
+
+                            </form>
+                        </div>
+
+                        <div>
+                            <p class="mb-0">Don't have an account? <a th:href="@{/register}" class="text-white-50 fw-bold mt-3">Register
+                                    Here</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+</section> -->
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img th:src="@{/images/white_logo1.png}"  src="./images/white_logo1.png">
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2022 Jagriti store</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Upper Bazar
+                        Ranchi, Jharkhand - 834001</span>
+                </p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 22-27782183</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@eduonix.com">support@jagritistores.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Jagriti Store</span>
+                Jagriti Store is a one stop destination for your family's fashion needs. We give you the opportunity to
+                give your wardrobe a makeover with the latest collections from our top brands.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" th:src="@{/javascript/jquery-3.4.1.slim.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/popper.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/bootstrap.min.js}"></script>
+</body>
+
+</html>

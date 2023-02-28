@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" >
+    <link rel="map" th:href="@{/css/bootstrap.min.css.map}" >
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="./css/style.css">
+<!--    <link rel="stylesheet" th:href="@{/css/bootstrap.css}" href="./css/bootstrap.css">-->
+<!--    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="./css/bootstrap.min.css">-->
+<!--    <link rel="stylesheet" th:href="@{/css/bootstrap.rtl.css}" href="./css/bootstrap.rtl.css">-->
+<!--    <link rel="stylesheet" th:href="@{/css/bootstrap.rtl.min.css}" href="./css/bootstrap.rtl.min.css">-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
+<!--          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"-->
+<!--          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&family=Sora:wght@500&display=swap" rel="stylesheet">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@600&display=swap" rel="stylesheet">-->
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="./css/style.css">
+    <title>Home</title>
+
+</head>
+<body style="background-color:#E9ECEF;">
+    <!-- <div class="container-fluid"> -->
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+    <a class="navbar-brand" href="#">
+      <img th:src="@{/images/white_logo.png}"  src="./images/white_logo1.png" width="auto" height="60">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+    <div class="container-fluid">
+      <ul class="nav navbar-nav">
+        <li class="hoverable">
+            <a class="nav-link" th:href="@{/}" href="./home.html">Home</a>
+        </li>
+        <li class="hoverable">
+            <a class="nav-link" th:href="@{/shop}" href="./shop.html">Shop</a>
+        </li>
+        <li class="hoverable">
+                    <a class="nav-link" th:href="@{/about}" href="./about.html">About</a>
+        </li><!-- 
+        <li class="hoverable">
+                    <a class="nav-link" th:href="@{/cart}" href="#">Cart</a>
+        </li> -->
+        <li class="hoverable">
+            <a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/login}" href="./login.html">Login</a>
+        </li>
+        <li class="hoverable">
+                    <a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/logout}" href="./home.html">Logout</a>
+        </li>
+      </ul>
+    </div>
+    <script src="./javascript/myscripts.js"></script>
+  </nav>
+<!-- </div> -->
+  <!--  for image -->
+<style>
+.container {
+  position: relative;
+  font-family: Arial;
+  margin: 0 auto;
+}
+</style>
+<!--.text-block {-->
+<!--  position: absolute;-->
+<!--  bottom: 50px;-->
+<!--  right: 100px;-->
+<!--  background-color: white;-->
+<!--  color: black;-->
+<!--  padding-left: 20px;-->
+<!--  padding-right: 20px;-->
+<!--}-->
+
+    <div class="container-image">
+        <img th:src="@{/images/about.png}" src="./images/about.png" alt="Norway" style="width:100%;">
+<!--        <div >-->
+
+<!--            <h5>"NOTHING BUT THE BEST"</h5>-->
+<!--            <h7>We will provide the "BEST" value in terms of products and services and adopt "best" processes for stakeholders, without compromise, thereby matching global standards of performance.</h7>-->
+<!--            <h5>"IT’S MAGICAL, IT’S COMFORTABLE, IT’S MY STORE"</h5>-->
+<!--            <h7>To be an inspirational and trusted brand, transforming customer’s lives through fashion and delightful shopping experience every time.</h7>-->
+<!--        </div>-->
+    </div>
+<footer class="footer-distributed">
+
+            <div class="footer-left">
+          <img th:src="@{/images/white_logo1.png}"  src="./images/white_logo1.png">
+
+                <p class="footer-links">
+                    <a href="#">Home</a>
+                    |
+                    <a href="#">About</a>
+                    |
+                    <a href="#">Contact</a>
+                </p>
+
+                <p class="footer-company-name">© 2022 Jagriti store</p>
+            </div>
+
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                      <p><span>Upper Bazar
+                         Ranchi, Jharkhand - 834001</span>
+                      </p>
+                </div>
+
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 22-27782183</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@eduonix.com">support@jagritistores.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>Jagriti Store</span>
+                    Jagriti Store is a one stop destination for your family's fashion needs. We give you the opportunity to give your wardrobe a makeover with the latest collections from our top brands.</p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+        </footer>
+
+    <script type="text/javascript" th:src="@{/javascript/jquery-3.4.1.slim.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/popper.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{/javascript/bootstrap.min.js}"></script>
+</body>
+</html>
